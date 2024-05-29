@@ -15,6 +15,7 @@ body {
   position: relative;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
+  width: 100vw;
   background-color: #fff;
 }
 
@@ -90,7 +91,7 @@ body {
   grid-template-columns: 30% 70%;
   width: 100vw;
   height: 100px;
-  background-color: #292929;
+  background-color: rgba(41, 41, 41, 0.8);
   z-index: 100;
 }
 .nav-container.shadow-bg {
@@ -154,11 +155,11 @@ body {
 .hero__heading {
   font-family: "Dancing Script", serif;
   font-weight: 300;
-  font-size: 9.2rem;
+  font-size: 5.2rem;
   margin-bottom: 60px;
 }
 .hero__description {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
 }
 .hero__shadow {
   position: absolute;
@@ -189,7 +190,7 @@ body {
 }
 .logo__img {
   position: absolute;
-  height: 90px;
+  height: 70px;
   left: 30px;
 }
 .logo__img.is-transparent {
@@ -198,8 +199,9 @@ body {
 
 .container {
   display: flex;
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
 }
 
 .aboutme {
@@ -230,15 +232,34 @@ body {
   margin: auto;
 }
 .aboutme__photo .my-photo {
-  width: 400px;
+  width: 100px;
 }
 
-@media (min-width: 1200px) {
-  .nav-container {
-    height: 120px;
+@media (max-width: 360px) {
+  .hero__heading {
+    font-size: 4.4rem;
   }
-  .nav-container .nav-desktop {
-    font-size: 2rem;
+  .hero__description {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 576px) {
+  .hero__heading {
+    font-size: 6.4rem;
+  }
+  .hero__description {
+    font-size: 1.8rem;
+  }
+  .logo__img {
+    height: 85px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__heading {
+    font-size: 7.8rem;
+  }
+  .hero__description {
+    font-size: 2.2rem;
   }
 }
 @media (min-width: 992px) {
@@ -251,18 +272,19 @@ body {
   .burger-btn {
     display: none;
   }
-}
-@media (max-width: 786px) {
   .hero__heading {
-    font-size: 7.2rem;
+    font-size: 9.2rem;
   }
   .hero__description {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
-@media (max-width: 360px) {
-  .logo__img {
-    height: 80px;
+@media (min-width: 1200px) {
+  .nav-container {
+    height: 120px;
+  }
+  .nav-container .nav-desktop {
+    font-size: 2rem;
   }
 }
 @keyframes bounce-top {

@@ -16,11 +16,10 @@ html {
 }
 
 body {
-	// min-width: 300px;
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
-	// background-color: $main-color;
+	width: 100vw;
 	background-color: $pure-white;
 }
 //BURGER BUTTON
@@ -111,7 +110,7 @@ body {
 	grid-template-columns: 30% 70%;
 	width: 100vw;
 	height: 100px;
-	background-color: $main-color;
+	background-color: $main-transparent;
 	z-index: 100;
 
 	&.shadow-bg {
@@ -185,12 +184,12 @@ body {
 	&__heading {
 		font-family: 'Dancing Script', serif;
 		font-weight: 300;
-		font-size: 9.2rem;
+		font-size: 5.2rem;
 		margin-bottom: 60px;
 	}
 
 	&__description {
-		font-size: 2.4rem;
+		font-size: 1.6rem;
 	}
 
 	&__shadow {
@@ -225,7 +224,7 @@ body {
 
 	&__img {
 		position: absolute;
-		height: 90px;
+		height: 70px;
 		left: 30px;
 
 		&.is-transparent {
@@ -236,9 +235,10 @@ body {
 
 .container {
 	display: flex;
+	margin: 0 auto;
 	// justify-content: center;
 	width: 100%;
-	height: 100%;
+	max-width: 1200px;
 }
 
 .aboutme {
@@ -273,19 +273,46 @@ body {
 		justify-content: center;
 		margin: auto;
 		& .my-photo {
-			width: 400px;
+			width: 100px;
 		}
 	}
 }
 
-@media (min-width: 1200px) {
-	.nav-container {
-		height: 120px;
-	}
+@media (max-width: 360px) {
+	.hero{
+		&__heading {
+		font-size: 4.4rem;
+		}
 
-	.nav-container {
-		& .nav-desktop {
-			font-size: 2rem;
+		&__description {
+			font-size: 1.4rem;
+		}
+}
+}
+
+@media (min-width: 576px) {
+	.hero {
+		&__heading {
+			font-size: 6.4rem;
+		}
+
+		&__description {
+			font-size: 1.8rem;
+		}
+	}
+	.logo__img {
+		height: 85px;
+	}
+}
+
+@media (min-width: 768px) {
+	.hero {
+		&__heading {
+			font-size: 7.8rem;
+		}
+
+		&__description {
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -304,23 +331,27 @@ body {
 	.burger-btn {
 		display: none;
 	}
-}
 
-@media (max-width: 786px) {
 	.hero {
 		&__heading {
-			font-size: 7.2rem;
+			font-size: 9.2rem;
 		}
 
 		&__description {
-			font-size: 2rem;
+			font-size: 2.4rem;
 		}
 	}
 }
 
-@media (max-width: 360px) {
-	.logo__img {
-		height: 80px;
+@media (min-width: 1200px) {
+	.nav-container {
+		height: 120px;
+	}
+
+	.nav-container {
+		& .nav-desktop {
+			font-size: 2rem;
+		}
 	}
 }
 
