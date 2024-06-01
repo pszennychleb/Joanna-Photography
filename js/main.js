@@ -9,15 +9,15 @@ const handleNav = () => {
 	navMobile.classList.toggle('nav-mobile--active')
 }
 
-// function addShadow() {
-// 	if (window.scrollY >= 100) {
-// 		navContainer.classList.add('shadow-bg')
-// 		logoImg.classList.add('is-transparent')
-// 	} else {
-// 		navContainer.classList.remove('shadow-bg')
-// 		logoImg.classList.remove('is-transparent')
-// 	}
-// }
+function addShadow() {
+	if (window.scrollY >= 100) {
+		navContainer.classList.add('shadow-bg')
+		logoImg.classList.add('is-transparent')
+	} else {
+		navContainer.classList.remove('shadow-bg')
+		logoImg.classList.remove('is-transparent')
+	}
+}
 
-// window.addEventListener('scroll', addShadow)
+window.addEventListener('scroll', addShadow)
 navBtn.addEventListener('click', handleNav)

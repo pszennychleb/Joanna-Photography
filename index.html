@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/08612232c0.js" crossorigin="anonymous"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;700&family=Montserrat:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merienda:wght@300;400&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -29,7 +29,7 @@
 
         <nav class="nav nav-mobile">
             <a href="index.html" class="nav__link">Home</a>
-            <a href="#aboutme" class="nav__link">O mnie</a>
+            <a href="aboutme.html" class="nav__link">O mnie</a>
             <a href="portfolio.html" class="nav__link">Portfolio</a>
             <a href="offer.html" class="nav__link">Oferta</a>
             <a href="contact.html" class="nav__link">Kontakt</a>
@@ -37,7 +37,7 @@
 
         <nav class="nav nav-desktop">
             <a href="index.html" class="nav__link">Home</a>
-            <a href="#aboutme" class="nav__link">O mnie</a>
+            <a href="aboutme.html" class="nav__link">O mnie</a>
             <a href="portfolio.html" class="nav__link">Portfolio</a>
             <a href="offer.html" class="nav__link">Oferta</a>
             <a href="contact.html" class="nav__link">Kontakt</a>
@@ -46,34 +46,84 @@
     <header class="hero" id="home">
         <div class="hero__shadow"></div>
         <div class="hero__text">
-            <h1 class="hero__heading">Fotografia kobieca</h1>
+            <h1 class="hero__heading">Fotografia artystyczna</h1>
             <p class="hero__description">Poświęć sobie czas i poczuj się wyjątkowo!</p>
             <!-- <button>Hire me</button> -->
-            <div class="arrow"> <a href="#aboutme"><i class="fa-solid fa-chevron-down bounce-top"></i></a></div>
+            <div class="arrow"><i class="fa-solid fa-chevron-down bounce-top"></i></div>
         </div>
     </header>
     <main class="main">
-        <section class="aboutme" id="aboutme">
-            <h2 class="aboutme__heading">O mnie</h2>
-            <div class="container">
-                <div class="aboutme__text">
-                    <p class="aboutme__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-                        ducimus odio distinctio itaque ad praesentium eligendi velit maxime sed? Voluptatibus minima
-                        ipsam velit maxime explicabo, voluptas quibusdam iusto consequatur nam at vel fugit, laboriosam
-                        tempora officiis, facilis vitae quaerat? Maiores expedita earum, quae, praesentium enim fugit
-                        nemo suscipit aspernatur dicta quas omnis ullam iste impedit consequuntur dolor itaque ipsa ex
-                        culpa? Dicta soluta odio nostrum dolores nobis accusamus consectetur eius fugit, eos aut veniam
-                        dolor similique expedita excepturi iure possimus assumenda? Maxime ullam exercitationem natus
-                        fugit libero neque accusamus temporibus corporis laudantium eaque quidem atque eveniet tempore
-                        illo unde, ipsa totam magni obcaecati? Aliquam est nobis, doloribus illum sit accusamus.</p>
+        <section class="info section-padding">
+            <div class="wrapper">
+                <h2 class="section-heading">Profesjonalna sesja zdjęciowa</h2>
+                <p class="section-description">Marzysz o tym, aby wydobyć z Ciebie to co najpiękniejsze i wreszcie
+                    podobać się sobie na zdjęciach? Zastanawiasz się, jak to jest stanąć przed profesjonalnym obiektywem
+                    zamiast aparatu telefonu? Dobrze trafiłeś!
+                </p>
+                <p class="section-description">
+                    Większość klientów przed swoją pierwszą w życiu sesją obawia się, że jest niefotogeniczna, nie
+                    podoba się sobie na zdjęciach, gdyż w głowie widzą siebie ze zdjęć przypadkowych, niepozowanych,
+                    często na szybko "pstrykniętych" telefonem.
+                </p>
+                <p class="section-description">
+                    Natomiast po profesjonalnej sesji, dedykowanej tylko dla nich, słyszę:
+                </p>
+                <p class="section-description">
+                    "Wow! Nie wiedziałem/am, że mogę tak pięknie wyglądać na zdjęciach!"
+                </p>
+                <p class="section-description">"Wreszcie czuję się jak modelka!"
+                </p>
+                <p class="section-description">W dzisiejszym świecie nietrudno zrobić zdjęcie, a nawet setki, gdy każdy
+                    z nas posiada telefon komórkowy, lecz uwierz mi, że zdjęcia te nie równają się jakością z tymi
+                    wykonanymi profesjonalnym aparatem fotograficznym.
+                </p>
+                <p class="info__invitation">Zapraszam!</p>
+                <div class="underline"></div>
+                <div class="info__box">
+                    <h3 class="info__box-heading">Sesje kobiece</h3>
+                    <div class="info__box-photo">
+                        <img src="./img/photo1.jpg" alt="Moje zdjęcie" class="info__photo">
+                    </div>
+                    <div class="info__box-text">
+                        <p class="info__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+                            ducimus odio distinctio itaque ad praesentium eligendi velit maxime sed? Voluptatibus minima
+                            ipsam velit maxime explicabo, voluptas quibusdam iusto consequatur nam at vel fugit,
+                            laboriosam
+                            tempora officiis, facilis vitae quaerat?</p>
+                    </div>
                 </div>
-                <div class="aboutme__photo">
-                    <img src="./img/me.jpg" alt="Moje zdjęcie" class="my-photo">
+                <div class="info__box row-reverse">
+                    <h3 class="info__box-heading">Sesje dziecięce</h3>
+                    <div class="info__box-photo">
+                        <img src="./img/photo2.jpg" alt="Moje zdjęcie" class="info__photo">
+                    </div>
+                    <div class="info__box-text">
+                        <p class="info__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+                            ducimus odio distinctio itaque ad praesentium eligendi velit maxime sed? Voluptatibus minima
+                            ipsam velit maxime explicabo, voluptas quibusdam iusto consequatur nam at vel fugit,
+                            laboriosam
+                            tempora officiis, facilis vitae quaerat?</p>
+                    </div>
+                </div>
+                <div class="info__box">
+                    <h3 class="info__box-heading">Sesje rodzinne</h3>
+                    <div class="info__box-photo">
+                        <img src="./img/photo3.jpg" alt="Moje zdjęcie" class="info__photo">
+                    </div>
+                    <div class="info__box-text">
+                        <p class="info__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+                            ducimus odio distinctio itaque ad praesentium eligendi velit maxime sed? Voluptatibus minima
+                            ipsam velit maxime explicabo, voluptas quibusdam iusto consequatur nam at vel fugit,
+                            laboriosam
+                            tempora officiis, facilis vitae quaerat?</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <div class="check"></div>
+    <footer class="footer">
+
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

@@ -13,10 +13,12 @@ html {
 
 body {
   position: relative;
+  width: 100vw;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
-  width: 100vw;
+  color: #292929;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 .burger-btn {
@@ -88,10 +90,11 @@ body {
 .nav-container {
   position: fixed;
   display: grid;
+  margin-bottom: 100px;
   grid-template-columns: 30% 70%;
   width: 100vw;
   height: 100px;
-  background-color: rgba(41, 41, 41, 0.8);
+  background-color: #292929;
   z-index: 100;
 }
 .nav-container.shadow-bg {
@@ -134,6 +137,21 @@ body {
   color: #FF5D44;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  grid-column: 1/2;
+  height: 100%;
+}
+.logo__img {
+  position: absolute;
+  height: 70px;
+  left: 30px;
+}
+.logo__img.is-transparent {
+  opacity: 0.8;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -153,6 +171,7 @@ body {
   height: 100%;
 }
 .hero__heading {
+  padding: 0 10px;
   font-family: "Dancing Script", serif;
   font-weight: 300;
   font-size: 5.2rem;
@@ -182,57 +201,91 @@ body {
   animation: bounce-top 2s infinite both;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  grid-column: 1/2;
-  height: 100%;
-}
-.logo__img {
-  position: absolute;
-  height: 70px;
-  left: 30px;
-}
-.logo__img.is-transparent {
-  opacity: 0.8;
+.main-subsite {
+  position: relative;
+  top: 100px;
 }
 
-.container {
-  display: flex;
-  margin: 0 auto;
+.wrapper {
+  margin: 0 auto 40px;
   width: 100%;
   max-width: 1200px;
 }
 
-.aboutme {
-  height: 100vh;
-}
-.aboutme__heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3.6rem;
+.section-heading {
+  position: relative;
+  margin: 1em auto;
+  font-size: 2.4rem;
+  text-align: center;
   text-transform: uppercase;
-  font-family: "Open sasns";
+  font-family: "Merienda", serif;
+  font-weight: 400;
   color: #FF5D44;
-  margin: 40px 0;
+  letter-spacing: 2px;
 }
-.aboutme__text {
+.section-padding {
+  padding: 2em 2em;
+}
+.section-description {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 1em;
+}
+
+.aboutme__box,
+.info__box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  width: 50%;
-  margin: auto;
+  margin: 2em 0;
+  width: 100%;
 }
-.aboutme__photo {
+.aboutme__box-heading,
+.info__box-heading {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.aboutme__box-photo,
+.info__box-photo {
+  border: 1px solid #292929;
+  border-radius: 5px;
+  background-color: #292929;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: auto;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 80%;
 }
-.aboutme__photo .my-photo {
-  width: 100px;
+.aboutme__photo,
+.info__photo {
+  padding: 10px;
+  width: 100%;
+}
+.aboutme__text,
+.info__text {
+  text-align: center;
+  padding: 2em 2em;
+  font-size: 1.4rem;
+}
+.aboutme__invitation,
+.info__invitation {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #FF5D44;
+  font-weight: 400;
+  padding: 0.5em;
+}
+
+.aboutme__photo {
+  border-radius: 50%;
+}
+
+.underline {
+  margin: 0 auto 40px;
+  width: 50%;
+  height: 2px;
+  background-color: #FF5D44;
 }
 
 @media (max-width: 360px) {
@@ -241,6 +294,16 @@ body {
   }
   .hero__description {
     font-size: 1.4rem;
+  }
+  .section-heading {
+    font-size: 2rem;
+  }
+  .section-description {
+    font-size: 1.4rem;
+  }
+  .aboutme__box-heading,
+  .info__box-heading {
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 576px) {
@@ -253,13 +316,48 @@ body {
   .logo__img {
     height: 85px;
   }
+  .aboutme__text {
+    font-size: 1.6rem;
+  }
+  .section-heading {
+    font-size: 3.8rem;
+  }
+  .aboutme__box,
+  .info__box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .aboutme__box-photo,
+  .info__box-photo {
+    width: 40%;
+  }
+  .aboutme__box-text,
+  .info__box-text {
+    width: 55%;
+  }
+  .aboutme__photo,
+  .info__photo {
+    width: 100%;
+  }
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
 }
+.footer {
+  height: 100px;
+  background-color: #292929;
+}
+
 @media (min-width: 768px) {
   .hero__heading {
     font-size: 7.8rem;
   }
   .hero__description {
     font-size: 2.2rem;
+  }
+  .section-heading {
+    font-size: 4.2rem;
   }
 }
 @media (min-width: 992px) {
@@ -284,6 +382,9 @@ body {
     height: 120px;
   }
   .nav-container .nav-desktop {
+    font-size: 2rem;
+  }
+  .aboutme__text {
     font-size: 2rem;
   }
 }

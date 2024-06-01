@@ -17,10 +17,14 @@ html {
 
 body {
 	position: relative;
+	width: 100vw;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
-	width: 100vw;
+	color: $main-color;
 	background-color: $pure-white;
+	// color: $pure-white;
+	// background-color: $main-color;
+	overflow-x: hidden;
 }
 //BURGER BUTTON
 .burger-btn {
@@ -104,13 +108,15 @@ body {
 	}
 }
 
+//NAVIGATION BAR
 .nav-container {
 	position: fixed;
 	display: grid;
+	margin-bottom: 100px;
 	grid-template-columns: 30% 70%;
 	width: 100vw;
 	height: 100px;
-	background-color: $main-transparent;
+	background-color: $main-color;
 	z-index: 100;
 
 	&.shadow-bg {
@@ -161,6 +167,25 @@ body {
 		}
 	}
 }
+
+.logo {
+	display: flex;
+	align-items: center;
+	grid-column: 1 / 2;
+	height: 100%;
+
+	&__img {
+		position: absolute;
+		height: 70px;
+		left: 30px;
+
+		&.is-transparent {
+			opacity: 0.8;
+		}
+	}
+}
+
+//HERO SECTION
 .hero {
 	position: relative;
 	height: 100vh;
@@ -182,6 +207,7 @@ body {
 	}
 
 	&__heading {
+		padding: 0 10px;
 		font-family: 'Dancing Script', serif;
 		font-weight: 300;
 		font-size: 5.2rem;
@@ -215,79 +241,125 @@ body {
 		}
 	}
 }
-
-.logo {
-	display: flex;
-	align-items: center;
-	grid-column: 1 / 2;
-	height: 100%;
-
-	&__img {
-		position: absolute;
-		height: 70px;
-		left: 30px;
-
-		&.is-transparent {
-			opacity: 0.8;
-		}
-	}
+.main-subsite {
+	position: relative;
+	top: 100px;
 }
-
-.container {
-	display: flex;
-	margin: 0 auto;
-	// justify-content: center;
+// SECTION GENERAL
+.wrapper {
+	margin: 0 auto 40px;
 	width: 100%;
 	max-width: 1200px;
 }
 
-.aboutme {
-	height: 100vh;
-
-	&__heading {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 3.6rem;
-		text-transform: uppercase;
-		font-family: 'Open sasns';
-		color: $orange-color;
-		margin: 40px 0;
-	}
-
-	&__text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+.section {
+	&-heading {
+		position: relative;
+		margin: 1em auto;
+		font-size: 2.4rem;
 		text-align: center;
-		width: 50%;
-		margin: auto;
+		text-transform: uppercase;
+		font-family: 'Merienda', serif;
+		font-weight: 400;
+		color: $orange-color;
+		letter-spacing: 2px;
 	}
 
-	// &__description {
-	// }
-
-	&__photo {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: auto;
-		& .my-photo {
-			width: 100px;
-		}
+	&-padding {
+		padding: 2em 2em;
+	}
+	&-description {
+		text-align: center;
+		font-size: 1.6rem;
+		letter-spacing: 1px;
+		padding: 1em;
 	}
 }
 
+// ABOUT ME SECTION
+
+.aboutme,
+.info {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2em 0;
+		width: 100%;
+
+		&-heading {
+			font-size: 2rem;
+			margin-bottom: 1em;
+			// font-weight: 400;
+		}
+
+		&-photo {
+			border: 1px solid $main-color;
+			border-radius: 5px;
+			background-color: $main-color;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 1em;
+			width: 80%;
+		}
+	}
+	&__photo {
+		padding: 10px;
+		width: 100%;
+	}
+
+	&__text {
+		text-align: center;
+		padding: 2em 2em;
+		font-size: 1.4rem;
+	}
+
+	&__invitation {
+		text-align: center;
+		font-size: 2.4rem;
+		color: $orange-color;
+		font-weight: 400;
+		padding: 0.5em;
+	}
+}
+
+.aboutme__photo {
+	border-radius: 50%;
+}
+
+.underline {
+	margin: 0 auto 40px;
+	width: 50%;
+	height: 2px;
+	background-color: $orange-color;
+}
+
 @media (max-width: 360px) {
-	.hero{
+	.hero {
 		&__heading {
-		font-size: 4.4rem;
+			font-size: 4.4rem;
 		}
 
 		&__description {
 			font-size: 1.4rem;
 		}
-}
+	}
+	.section-heading {
+		font-size: 2rem;
+	}
+	.section-description {
+		font-size: 1.4rem;
+	}
+
+	.aboutme,
+	.info {
+		&__box {
+			&-heading {
+				font-size: 1.6rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 576px) {
@@ -303,6 +375,46 @@ body {
 	.logo__img {
 		height: 85px;
 	}
+	.aboutme__text {
+		font-size: 1.6rem;
+	}
+	.section-heading {
+		font-size: 3.8rem;
+	}
+	.aboutme,
+	.info {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&-heading {
+				// display: inline;
+			}
+
+			&-photo {
+				width: 40%;
+			}
+
+			&-text {
+				width: 55%;
+			}
+		}
+
+		&__photo {
+			width: 100%;
+		}
+	}
+
+	.row-reverse {
+		flex-direction: row-reverse;
+	}
+}
+
+// FOOTER
+.footer {
+	height: 100px;
+	background-color: $main-color;
 }
 
 @media (min-width: 768px) {
@@ -314,6 +426,9 @@ body {
 		&__description {
 			font-size: 2.2rem;
 		}
+	}
+	.section-heading {
+		font-size: 4.2rem;
 	}
 }
 
@@ -352,6 +467,9 @@ body {
 		& .nav-desktop {
 			font-size: 2rem;
 		}
+	}
+	.aboutme__text {
+		font-size: 2rem;
 	}
 }
 
