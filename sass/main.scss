@@ -18,14 +18,22 @@ html {
 body {
 	position: relative;
 	width: 100vw;
+	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
+	// align-content: center;
 	color: $main-color;
 	background-color: $pure-white;
-	// color: $pure-white;
-	// background-color: $main-color;
 	overflow-x: hidden;
 }
+.main {
+	margin-bottom: 100px;
+}
+
+.main-subsite {
+	margin-top: 100px;
+}
+
 //BURGER BUTTON
 .burger-btn {
 	display: flex;
@@ -111,17 +119,13 @@ body {
 //NAVIGATION BAR
 .nav-container {
 	position: fixed;
+	top: 0;
 	display: grid;
-	margin-bottom: 100px;
 	grid-template-columns: 30% 70%;
 	width: 100vw;
 	height: 100px;
 	background-color: $main-color;
 	z-index: 100;
-
-	&.shadow-bg {
-		background-color: $main-transparent;
-	}
 
 	& .nav {
 		&-desktop {
@@ -168,6 +172,10 @@ body {
 	}
 }
 
+.shadow-bg {
+	background-color: $main-transparent !important;
+}
+
 .logo {
 	display: flex;
 	align-items: center;
@@ -177,7 +185,7 @@ body {
 	&__img {
 		position: absolute;
 		height: 70px;
-		left: 30px;
+		left: 20px;
 
 		&.is-transparent {
 			opacity: 0.8;
@@ -241,15 +249,12 @@ body {
 		}
 	}
 }
-.main-subsite {
-	position: relative;
-	top: 100px;
-}
+
 // SECTION GENERAL
 .wrapper {
-	margin: 0 auto 40px;
-	width: 100%;
+	margin: 0 auto;
 	max-width: 1200px;
+	width: 100%;
 }
 
 .section {
@@ -270,42 +275,75 @@ body {
 	}
 	&-description {
 		text-align: center;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		letter-spacing: 1px;
 		padding: 1em;
 	}
 }
 
-// ABOUT ME SECTION
+// BUTTONS
+.buttons__box {
+	display: flex;
+	justify-content: center;
+}
 
-.aboutme,
-.info {
+.btn {
+	padding: 0.8em 1em;
+	margin: 0.8em;
+	font-size: 1.4rem;
+	background: $orange-color;
+	border: none;
+	border-radius: 14px;
+	color: $pure-white;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	align-content: center;
+	cursor: pointer;
+	// width: 50%;
+
+	&:hover {
+		background: $pure-white;
+		border: 1px solid $orange-color;
+		color: $orange-color;
+	}
+}
+
+// INFO SECTION
+
+.content {
 	&__box {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 2em 0;
-		width: 100%;
 
 		&-heading {
+			margin: 1.4em auto;
+			font-family: 'Merienda', serif;
+			color: $orange-color;
+			text-align: center;
 			font-size: 2rem;
-			margin-bottom: 1em;
-			// font-weight: 400;
+			font-weight: 400;
 		}
 
 		&-photo {
-			border: 1px solid $main-color;
-			border-radius: 5px;
-			background-color: $main-color;
+			border: 2px solid $main-transparent;
+			background-color: $pure-white;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin-bottom: 1em;
-			width: 80%;
+			width: 60%;
+		}
+
+		&-group {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 	&__photo {
-		padding: 10px;
+		padding: 2px;
 		width: 100%;
 	}
 
@@ -313,26 +351,166 @@ body {
 		text-align: center;
 		padding: 2em 2em;
 		font-size: 1.4rem;
+		letter-spacing: 1px;
 	}
 
 	&__invitation {
 		text-align: center;
-		font-size: 2.4rem;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		font-family: 'Merienda', serif;
 		color: $orange-color;
 		font-weight: 400;
-		padding: 0.5em;
+		margin: 0.8em;
 	}
 }
 
-.aboutme__photo {
-	border-radius: 50%;
+.fa-arrow-right {
+	margin-left: 10px;
 }
 
-.underline {
-	margin: 0 auto 40px;
-	width: 50%;
-	height: 2px;
-	background-color: $orange-color;
+.bounce-right {
+	animation: bounce-right 1s infinite both;
+}
+
+.contact {
+	& .contact__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5em;
+		margin: 2em;
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	&-text {
+		padding: 0 0.5em;
+	}
+
+	& .contact__box-heading {
+		margin: 0.3em;
+	}
+
+	&__box-link {
+		padding: 0.3em;
+		font-size: 3rem;
+		color: $main-transparent;
+	}
+
+	.underline {
+		margin: 40px auto;
+		width: 30%;
+		height: 2px;
+		background-color: $orange-color;
+	}
+
+	.fa-envelope {
+		color: $main-transparent;
+		font-size: 1.8rem;
+	}
+}
+
+//CONTACTS
+
+.contact {
+	position: relative;
+	overflow: hidden;
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+		font-size: 1.4rem;
+	}
+
+	&__form-input {
+		margin-bottom: 3em;
+		padding: 0.6em 1.2em;
+		border: 1px solid $main-color;
+		border-radius: 8px;
+		font-size: 1.6rem;
+	}
+
+	&__form-textarea {
+		margin-bottom: 3em;
+		padding: 0.6em 1.2em;
+		border: 1px solid $main-color;
+		border-radius: 8px;
+		font-size: 1.6rem;
+		min-height: 150px;
+		resize: vertical;
+		width: 100%;
+	}
+
+	&__form-btn {
+		align-self: center;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: $orange-color;
+		cursor: pointer;
+
+		&:hover {
+			background: $pure-white;
+			border: 1px solid $orange-color;
+			color: $orange-color;
+		}
+	}
+}
+
+// FOOTER
+.footer {
+	width: 100vw;
+	color: $pure-white;
+	background-color: $main-color;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: 80px;
+		padding: 0 2em;
+		font-size: 1.4rem;
+	}
+
+	&__box-link {
+		padding: 0.3em;
+		font-size: 2rem;
+		color: $pure-white;
+	}
+}
+
+.footer,
+.contact {
+	&__box-social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 1em;
+	}
+
+	&__box-link {
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $orange-color;
+		}
+		&__bottom-text {
+			padding: 1em;
+			text-align: center;
+		}
+	}
 }
 
 @media (max-width: 360px) {
@@ -349,19 +527,50 @@ body {
 		font-size: 2rem;
 	}
 	.section-description {
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 	}
 
-	.aboutme,
-	.info {
+	.content {
 		&__box {
 			&-heading {
 				font-size: 1.6rem;
 			}
 		}
+
+		&__text {
+			font-size: 1.2rem;
+		}
+
+		&__invitation {
+			font-size: 1.4rem;
+		}
+	}
+
+	.btn {
+		font-size: 1.2rem;
+	}
+
+	.footer {
+		&__box {
+			font-size: 1.2rem;
+		}
+	}
+
+	.contact {
+		& .contact__text {
+			font-size: 1.2rem;
+		}
+
+		.fa-envelope {
+			font-size: 1em;
+			margin-right: 5px;
+		}
+
+		&__form-label {
+			font-size: 1.2rem;
+		}
 	}
 }
-
 @media (min-width: 576px) {
 	.hero {
 		&__heading {
@@ -378,45 +587,84 @@ body {
 	.aboutme__text {
 		font-size: 1.6rem;
 	}
-	.section-heading {
-		font-size: 3.8rem;
-	}
-	.aboutme,
-	.info {
-		&__box {
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
+	.section {
+		&-heading {
+			font-size: 3rem;
+		}
 
+		&-padding {
+			padding: 2em 3em;
+		}
+	}
+
+	.content {
+		&__box {
 			&-heading {
-				// display: inline;
+				font-size: 2.6rem;
 			}
 
 			&-photo {
+				margin: 0 0.8em;
 				width: 40%;
 			}
 
-			&-text {
-				width: 55%;
+			&-group {
+				flex-direction: row-reverse;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 1.2em;
 			}
+		}
+
+		&__text {
+			width: 60%;
+			text-align: left;
 		}
 
 		&__photo {
 			width: 100%;
 		}
+
+		&__invitation {
+			font-size: 2rem;
+		}
 	}
 
-	.row-reverse {
-		flex-direction: row-reverse;
+	.contact__text {
+		text-align: center;
+	}
+
+	.contact {
+		& .contact__text {
+			font-size: 1.6rem;
+		}
+
+		&__box-link {
+			font-size: 4rem;
+		}
+
+		.fa-envelope {
+			font-size: 2rem;
+		}
+
+		&__form-label {
+			font-size: 1.6rem;
+		}
+
+		.btn {
+			font-size: 1.6rem;
+		}
+
+		.footer {
+			&__box {
+				font-size: 1.4rem;
+			}
+			&__box-link {
+				font-size: 2.4rem;
+			}
+		}
 	}
 }
-
-// FOOTER
-.footer {
-	height: 100px;
-	background-color: $main-color;
-}
-
 @media (min-width: 768px) {
 	.hero {
 		&__heading {
@@ -427,8 +675,20 @@ body {
 			font-size: 2.2rem;
 		}
 	}
-	.section-heading {
-		font-size: 4.2rem;
+	.section {
+		&-padding {
+			padding: 2em 4em;
+		}
+
+		&-description {
+			font-size: 1.6rem;
+		}
+	}
+
+	.content {
+		&__text {
+			font-size: 1.6rem;
+		}
 	}
 }
 
@@ -456,6 +716,30 @@ body {
 			font-size: 2.4rem;
 		}
 	}
+
+	.content {
+		&__text {
+			font-size: 1.6rem;
+		}
+
+		&__box {
+			&-heading {
+				font-size: 2.8rem;
+			}
+
+			&-photo {
+				width: 30%;
+			}
+		}
+
+		&__invitation {
+			font-size: 2.4rem;
+		}
+	}
+
+	.underline {
+		width: 40%;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -470,6 +754,13 @@ body {
 	}
 	.aboutme__text {
 		font-size: 2rem;
+	}
+	.content {
+		&__box {
+			&-photo {
+				width: 25%;
+			}
+		}
 	}
 }
 
@@ -502,5 +793,22 @@ body {
 		transform: translate(-50%, 0px);
 		animation-timing-function: ease-out;
 		opacity: 1;
+	}
+}
+
+@keyframes bounce-right {
+	0% {
+		transform: translateX(0);
+		animation-timing-function: ease-in-out;
+	}
+
+	50% {
+		transform: translateX(40%);
+		animation-timing-function: ease-in-out;
+	}
+
+	100% {
+		transform: translateX(0);
+		animation-timing-function: ease-in-out;
 	}
 }

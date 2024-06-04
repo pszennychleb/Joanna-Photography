@@ -14,11 +14,20 @@ html {
 body {
   position: relative;
   width: 100vw;
+  height: 100vh;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   color: #292929;
   background-color: #fff;
   overflow-x: hidden;
+}
+
+.main {
+  margin-bottom: 100px;
+}
+
+.main-subsite {
+  margin-top: 100px;
 }
 
 .burger-btn {
@@ -89,16 +98,13 @@ body {
 
 .nav-container {
   position: fixed;
+  top: 0;
   display: grid;
-  margin-bottom: 100px;
   grid-template-columns: 30% 70%;
   width: 100vw;
   height: 100px;
   background-color: #292929;
   z-index: 100;
-}
-.nav-container.shadow-bg {
-  background-color: rgba(41, 41, 41, 0.8);
 }
 .nav-container .nav-desktop {
   grid-column: 2/3;
@@ -137,6 +143,10 @@ body {
   color: #FF5D44;
 }
 
+.shadow-bg {
+  background-color: rgba(41, 41, 41, 0.9) !important;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -146,7 +156,7 @@ body {
 .logo__img {
   position: absolute;
   height: 70px;
-  left: 30px;
+  left: 20px;
 }
 .logo__img.is-transparent {
   opacity: 0.8;
@@ -201,15 +211,10 @@ body {
   animation: bounce-top 2s infinite both;
 }
 
-.main-subsite {
-  position: relative;
-  top: 100px;
-}
-
 .wrapper {
-  margin: 0 auto 40px;
-  width: 100%;
+  margin: 0 auto;
   max-width: 1200px;
+  width: 100%;
 }
 
 .section-heading {
@@ -228,64 +233,209 @@ body {
 }
 .section-description {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   padding: 1em;
 }
 
-.aboutme__box,
-.info__box {
+.buttons__box {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8em 1em;
+  margin: 0.8em;
+  font-size: 1.4rem;
+  background: #FF5D44;
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #fff;
+  border: 1px solid #FF5D44;
+  color: #FF5D44;
+}
+
+.content__box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em 0;
-  width: 100%;
 }
-.aboutme__box-heading,
-.info__box-heading {
+.content__box-heading {
+  margin: 1.4em auto;
+  font-family: "Merienda", serif;
+  color: #FF5D44;
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 1em;
+  font-weight: 400;
 }
-.aboutme__box-photo,
-.info__box-photo {
-  border: 1px solid #292929;
-  border-radius: 5px;
-  background-color: #292929;
+.content__box-photo {
+  border: 2px solid rgba(41, 41, 41, 0.9);
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
-  width: 80%;
+  width: 60%;
 }
-.aboutme__photo,
-.info__photo {
-  padding: 10px;
+.content__box-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content__photo {
+  padding: 2px;
   width: 100%;
 }
-.aboutme__text,
-.info__text {
+.content__text {
   text-align: center;
   padding: 2em 2em;
   font-size: 1.4rem;
+  letter-spacing: 1px;
 }
-.aboutme__invitation,
-.info__invitation {
+.content__invitation {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: "Merienda", serif;
   color: #FF5D44;
   font-weight: 400;
+  margin: 0.8em;
+}
+
+.fa-arrow-right {
+  margin-left: 10px;
+}
+
+.bounce-right {
+  animation: bounce-right 1s infinite both;
+}
+
+.contact .contact__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5em;
+  margin: 2em;
+  font-size: 1.4rem;
+  text-align: center;
 }
-
-.aboutme__photo {
-  border-radius: 50%;
+.contact-text {
+  padding: 0 0.5em;
 }
-
-.underline {
-  margin: 0 auto 40px;
-  width: 50%;
+.contact .contact__box-heading {
+  margin: 0.3em;
+}
+.contact__box-link {
+  padding: 0.3em;
+  font-size: 3rem;
+  color: rgba(41, 41, 41, 0.9);
+}
+.contact .underline {
+  margin: 40px auto;
+  width: 30%;
   height: 2px;
   background-color: #FF5D44;
+}
+.contact .fa-envelope {
+  color: rgba(41, 41, 41, 0.9);
+  font-size: 1.8rem;
+}
+
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+.contact__form, .contact__form-top {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.contact__form-input {
+  margin-bottom: 3em;
+  padding: 0.6em 1.2em;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-textarea {
+  margin-bottom: 3em;
+  padding: 0.6em 1.2em;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  min-height: 150px;
+  resize: vertical;
+  width: 100%;
+}
+.contact__form-btn {
+  align-self: center;
+  padding: 1em;
+  width: 100%;
+  max-width: 300px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5D44;
+  cursor: pointer;
+}
+.contact__form-btn:hover {
+  background: #fff;
+  border: 1px solid #FF5D44;
+  color: #FF5D44;
+}
+
+.footer {
+  width: 100vw;
+  color: #fff;
+  background-color: #292929;
+}
+.footer__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  padding: 0 2em;
+  font-size: 1.4rem;
+}
+.footer__box-link {
+  padding: 0.3em;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.footer__box-social,
+.contact__box-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+}
+.footer__box-link,
+.contact__box-link {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer__box-link:hover,
+.contact__box-link:hover {
+  color: #FF5D44;
+}
+.footer__box-link__bottom-text,
+.contact__box-link__bottom-text {
+  padding: 1em;
+  text-align: center;
 }
 
 @media (max-width: 360px) {
@@ -299,11 +449,32 @@ body {
     font-size: 2rem;
   }
   .section-description {
+    font-size: 1.2rem;
+  }
+  .content__box-heading {
+    font-size: 1.6rem;
+  }
+  .content__text {
+    font-size: 1.2rem;
+  }
+  .content__invitation {
     font-size: 1.4rem;
   }
-  .aboutme__box-heading,
-  .info__box-heading {
-    font-size: 1.6rem;
+  .btn {
+    font-size: 1.2rem;
+  }
+  .footer__box {
+    font-size: 1.2rem;
+  }
+  .contact .contact__text {
+    font-size: 1.2rem;
+  }
+  .contact .fa-envelope {
+    font-size: 1em;
+    margin-right: 5px;
+  }
+  .contact__form-label {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 576px) {
@@ -320,35 +491,59 @@ body {
     font-size: 1.6rem;
   }
   .section-heading {
-    font-size: 3.8rem;
+    font-size: 3rem;
   }
-  .aboutme__box,
-  .info__box {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .section-padding {
+    padding: 2em 3em;
   }
-  .aboutme__box-photo,
-  .info__box-photo {
+  .content__box-heading {
+    font-size: 2.6rem;
+  }
+  .content__box-photo {
+    margin: 0 0.8em;
     width: 40%;
   }
-  .aboutme__box-text,
-  .info__box-text {
-    width: 55%;
+  .content__box-group {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2em;
   }
-  .aboutme__photo,
-  .info__photo {
+  .content__text {
+    width: 60%;
+    text-align: left;
+  }
+  .content__photo {
     width: 100%;
   }
-  .row-reverse {
-    flex-direction: row-reverse;
+  .content__invitation {
+    font-size: 2rem;
+  }
+  .contact__text {
+    text-align: center;
+  }
+  .contact .contact__text {
+    font-size: 1.6rem;
+  }
+  .contact__box-link {
+    font-size: 4rem;
+  }
+  .contact .fa-envelope {
+    font-size: 2rem;
+  }
+  .contact__form-label {
+    font-size: 1.6rem;
+  }
+  .contact .btn {
+    font-size: 1.6rem;
+  }
+  .contact .footer__box {
+    font-size: 1.4rem;
+  }
+  .contact .footer__box-link {
+    font-size: 2.4rem;
   }
 }
-.footer {
-  height: 100px;
-  background-color: #292929;
-}
-
 @media (min-width: 768px) {
   .hero__heading {
     font-size: 7.8rem;
@@ -356,8 +551,14 @@ body {
   .hero__description {
     font-size: 2.2rem;
   }
-  .section-heading {
-    font-size: 4.2rem;
+  .section-padding {
+    padding: 2em 4em;
+  }
+  .section-description {
+    font-size: 1.6rem;
+  }
+  .content__text {
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 992px) {
@@ -376,6 +577,21 @@ body {
   .hero__description {
     font-size: 2.4rem;
   }
+  .content__text {
+    font-size: 1.6rem;
+  }
+  .content__box-heading {
+    font-size: 2.8rem;
+  }
+  .content__box-photo {
+    width: 30%;
+  }
+  .content__invitation {
+    font-size: 2.4rem;
+  }
+  .underline {
+    width: 40%;
+  }
 }
 @media (min-width: 1200px) {
   .nav-container {
@@ -386,6 +602,9 @@ body {
   }
   .aboutme__text {
     font-size: 2rem;
+  }
+  .content__box-photo {
+    width: 25%;
   }
 }
 @keyframes bounce-top {
@@ -413,5 +632,19 @@ body {
     transform: translate(-50%, 0px);
     animation-timing-function: ease-out;
     opacity: 1;
+  }
+}
+@keyframes bounce-right {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateX(40%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-in-out;
   }
 }
