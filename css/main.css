@@ -186,6 +186,10 @@ body {
   font-size: 5.2rem;
   margin-bottom: 60px;
 }
+.hero__heading-span {
+  display: block;
+  font-size: 4.4rem;
+}
 .hero__description {
   font-size: 1.6rem;
 }
