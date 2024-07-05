@@ -16,22 +16,20 @@ html {
 }
 
 body {
-	position: relative;
 	width: 100vw;
 	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
-	// align-content: center;
 	color: $main-color;
 	background-color: $pure-white;
 	overflow-x: hidden;
 }
 .main {
-	margin-bottom: 100px;
+	margin-bottom: 2em;
 }
 
 .main-subsite {
-	margin-top: 100px;
+	padding-top: 120px;
 }
 
 //BURGER BUTTON
@@ -173,7 +171,7 @@ body {
 }
 
 .shadow-bg {
-	background-color: $main-transparent !important;
+	background-color: $menu-transparent !important;
 }
 
 .logo {
@@ -373,7 +371,128 @@ body {
 	animation: bounce-right 1s infinite both;
 }
 
+.underline {
+	margin: 40px auto 0;
+	width: 40%;
+	height: 2px;
+	background-color: $main-transparent;
+}
+
+//PORTFOLIO
+.gallery {
+	display: grid;
+	grid-template: auto / 1fr;
+	gap: 20px 20px;
+	justify-items: center;
+	padding: 1em 0;
+	transform: scale(1);
+	
+	&__thumbnail {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 320px;
+		max-height: 400px;
+		list-style: none;
+		box-shadow: 0 0 10px rgba(41, 41, 41, 0.5);
+		transition: transform 0.4s;
+		border: 2px solid $main-transparent;
+
+		&:hover {
+			transform: scale(1.05);
+			cursor: pointer;
+		}
+	}
+
+	&__photo {
+		height: 100%;
+		width: 100%;
+		padding: 2px;
+		object-fit: cover;
+	}
+}
+
+// OFFER
+.offer {
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 10px 10px rgba(41, 41, 41, 0.6);
+		height: 400px;
+		width: 60%;
+
+		&-img {
+			background-size: cover;
+			background-position: center;
+
+			&:nth-child(1) {
+				background-image: $light-gradient, url(../img/photo1.jpg);
+			}
+			&:nth-child(2) {
+				background-image: $light-gradient, url(../img/photo2.jpg);
+			}
+			&:nth-child(3) {
+				background-image: $light-gradient, url(../img/photo3.jpg);
+			}
+		}
+
+		&-title {
+			padding: 1em 0;
+			text-align: center;
+			background-color: $orange-color;
+
+			&-text {
+				font-family: 'Merienda', serif;
+				color: $pure-white;
+				font-weight: 400;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			text-align: center;
+			padding: 1em;
+			list-style: none;
+			height: 100%;
+
+			&-item {
+				padding: 1em 0;
+				border-bottom: 1px solid $main-transparent;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		&-price {
+			padding: 1em;
+			font-size: 1.8rem;
+			font-weight: 700;
+			color: $orange-color;
+		}
+	}
+}
+
+//CONTACTS
+
 .contact {
+	position: relative;
+	overflow: hidden;
+
 	& .contact__text {
 		display: flex;
 		justify-content: center;
@@ -398,73 +517,63 @@ body {
 		color: $main-transparent;
 	}
 
-	.underline {
-		margin: 40px auto;
-		width: 30%;
-		height: 2px;
-		background-color: $orange-color;
+	&__box-mail {
+		color: $main-color;
 	}
 
 	.fa-envelope {
 		color: $main-transparent;
-		font-size: 1.8rem;
+		font-size: 2rem;
+		padding-right: 0.3rem;
 	}
-}
+	// &__form,
+	// &__form-top {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
 
-//CONTACTS
+	// &__form-label {
+	// 	margin-bottom: 0.5em;
+	// 	text-transform: uppercase;
+	// 	font-size: 1.4rem;
+	// }
 
-.contact {
-	position: relative;
-	overflow: hidden;
+	// &__form-input {
+	// 	margin-bottom: 3em;
+	// 	padding: 0.6em 1.2em;
+	// 	border: 1px solid $main-color;
+	// 	border-radius: 8px;
+	// 	font-size: 1.6rem;
+	// }
 
-	&__form,
-	&__form-top {
-		display: flex;
-		flex-direction: column;
-	}
+	// &__form-textarea {
+	// 	margin-bottom: 3em;
+	// 	padding: 0.6em 1.2em;
+	// 	border: 1px solid $main-color;
+	// 	border-radius: 8px;
+	// 	font-size: 1.6rem;
+	// 	min-height: 150px;
+	// 	resize: vertical;
+	// 	width: 100%;
+	// }
 
-	&__form-label {
-		margin-bottom: 0.5em;
-		text-transform: uppercase;
-		font-size: 1.4rem;
-	}
+	// &__form-btn {
+	// 	align-self: center;
+	// 	padding: 1em;
+	// 	width: 100%;
+	// 	max-width: 300px;
+	// 	color: $pure-white;
+	// 	border: none;
+	// 	border-radius: 8px;
+	// 	background-color: $orange-color;
+	// 	cursor: pointer;
 
-	&__form-input {
-		margin-bottom: 3em;
-		padding: 0.6em 1.2em;
-		border: 1px solid $main-color;
-		border-radius: 8px;
-		font-size: 1.6rem;
-	}
-
-	&__form-textarea {
-		margin-bottom: 3em;
-		padding: 0.6em 1.2em;
-		border: 1px solid $main-color;
-		border-radius: 8px;
-		font-size: 1.6rem;
-		min-height: 150px;
-		resize: vertical;
-		width: 100%;
-	}
-
-	&__form-btn {
-		align-self: center;
-		padding: 1em;
-		width: 100%;
-		max-width: 300px;
-		color: $pure-white;
-		border: none;
-		border-radius: 8px;
-		background-color: $orange-color;
-		cursor: pointer;
-
-		&:hover {
-			background: $pure-white;
-			border: 1px solid $orange-color;
-			color: $orange-color;
-		}
-	}
+	// 	&:hover {
+	// 		background: $pure-white;
+	// 		border: 1px solid $orange-color;
+	// 		color: $orange-color;
+	// 	}
+	// }
 }
 
 // FOOTER
@@ -499,7 +608,8 @@ body {
 		padding: 0 1em;
 	}
 
-	&__box-link {
+	&__box-link,
+	&__box-mail {
 		text-decoration: none;
 		transition: color 0.3s;
 
@@ -545,7 +655,13 @@ body {
 			font-size: 1.4rem;
 		}
 	}
-
+	.offer {
+		&__card {
+			&-list {
+				font-size: 1.4rem;
+			}
+		}
+	}
 	.btn {
 		font-size: 1.2rem;
 	}
@@ -634,9 +750,28 @@ body {
 		text-align: center;
 	}
 
+	.gallery {
+		&__thumbnail {
+			max-width: 400px;
+			max-height: 500px;
+		}
+	}
+
+	.offer {
+		&__card {
+			&-list {
+				font-size: 1.8rem;
+			}
+			&-title,
+			&-price {
+				font-size: 2rem;
+			}
+		}
+	}
+
 	.contact {
 		& .contact__text {
-			font-size: 1.6rem;
+			font-size: 1.8rem;
 		}
 
 		&__box-link {
@@ -644,7 +779,7 @@ body {
 		}
 
 		.fa-envelope {
-			font-size: 2rem;
+			font-size: 2.6rem;
 		}
 
 		&__form-label {
@@ -677,7 +812,7 @@ body {
 	}
 	.section {
 		&-padding {
-			padding: 2em 4em;
+			padding: 2em 2.4em;
 		}
 
 		&-description {
@@ -685,6 +820,20 @@ body {
 		}
 	}
 
+	.gallery {
+		grid-template: auto / repeat(3, 1fr);
+	}
+
+	.offer {
+		&__cards {
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+
+		&__card {
+			width: 300px;
+		}
+	}
 	.content {
 		&__text {
 			font-size: 1.6rem;
@@ -716,7 +865,11 @@ body {
 			font-size: 2.4rem;
 		}
 	}
-
+	.offer {
+		&__card-list {
+			font-size: 1.6rem;
+		}
+	}
 	.content {
 		&__text {
 			font-size: 1.6rem;
@@ -761,6 +914,10 @@ body {
 				width: 25%;
 			}
 		}
+	}
+
+	.gallery {
+		grid-template: auto / repeat(4, 1fr);
 	}
 }
 
