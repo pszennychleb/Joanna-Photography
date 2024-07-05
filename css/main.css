@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
@@ -324,7 +324,7 @@ body {
   background-color: rgba(41, 41, 41, 0.8);
 }
 
-.gallery {
+.gallery__list {
   display: grid;
   grid-template: auto/1fr;
   gap: 20px 20px;
@@ -353,6 +353,74 @@ body {
   padding: 2px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.gallery__photo:focus {
+  border: 5px solid #ff5d44;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 41, 41, 0.8);
+  height: 100vh;
+  width: 100%;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  z-index: 2000;
+  padding: 0 20px;
+  animation: fadeIn 0.3s;
+}
+.popup__img {
+  max-height: 80%;
+  max-width: 80%;
+  border: 2px solid rgba(41, 41, 41, 0.8);
+}
+.popup.hidden {
+  display: none;
+}
+.popup__close, .popup__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.popup__close:hover, .popup__arrow:hover {
+  color: #ff5d44;
+}
+.popup.fade-out {
+  animation: fadeOut 0.3s both;
+}
+.popup__close {
+  top: 20px;
+  right: 20px;
+}
+.popup__arrow {
+  top: 50%;
+  transform: translateY(-20px);
+}
+.popup__arrow--left {
+  left: 2%;
+}
+.popup__arrow--right {
+  right: 2%;
+}
+.popup .fa-arrow-right {
+  margin-left: 0;
 }
 
 .offer__cards {
@@ -519,6 +587,9 @@ body {
   .content__invitation {
     font-size: 1.4rem;
   }
+  .popup__arrow {
+    font-size: 24px;
+  }
   .offer__card-list {
     font-size: 1.4rem;
   }
@@ -584,7 +655,7 @@ body {
   .contact__text {
     text-align: center;
   }
-  .gallery__thumbnail {
+  .gallery__list__thumbnail {
     max-width: 400px;
     max-height: 500px;
   }
@@ -629,7 +700,7 @@ body {
   .section-description {
     font-size: 1.6rem;
   }
-  .gallery {
+  .gallery__list {
     grid-template: auto/repeat(3, 1fr);
   }
   .offer__cards {
@@ -691,7 +762,7 @@ body {
   .content__box-photo {
     width: 25%;
   }
-  .gallery {
+  .gallery__list {
     grid-template: auto/repeat(4, 1fr);
   }
 }
@@ -734,5 +805,21 @@ body {
   100% {
     transform: translateX(0);
     animation-timing-function: ease-in-out;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
